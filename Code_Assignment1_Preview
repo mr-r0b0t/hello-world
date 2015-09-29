@@ -1,0 +1,64 @@
+##################################################################
+# MPP-E1180: Intro. to Collab. Social Science Data Analyis       #
+# September 2015                                                 #
+# Pair Assignment 1                                              #
+# Katrin Heger & Benedikt Abendroth                              #
+# Tasks: (1) Access two core R data sets                         #
+#        (2) Illustrate the data's distribution with descriptive #
+#            statistics                                          #
+#        (3) Link two files dynamically                          #
+# The following code will analyze data set ??? of R Studio       #
+# concerning the tasks as mentioned above.                       #
+##################################################################
+
+# place holder for setup of github
+
+# List all internal data sets of R Studio
+data()
+# Load data set
+data(trees)
+# View information about the chosen data set
+?trees
+# List variable names (girth, height & volume)
+names(trees)
+# List min., 1st qu., median, mean, 3rd qu. and max.
+summary(trees)
+# Range of girth
+range(trees$Girth)
+# Range of height
+range(trees$Height)
+# Range of volume
+range(trees$Volume)
+# Create histrogram showing girth of trees
+hist(trees$Girth
+     main='Girth of 31 Black Cheryy Trees',
+     xlab='In inches')
+# Create histogram showing height of trees
+hist(trees$Height,
+     main='Height of 31 Black Cherry Trees',
+     xlab='In ft')
+# Create histogram showing volume of trees
+hist(trees$Volume,
+     main='Volume of 31 Black Cherry Trees',
+     xlab='In cubic ft')
+# Create boxplot for relation between Girth and Heigth
+plot(trees$Girth, trees$Height,
+     main='Girth and Height of Black Cherry Trees',
+     xlab='Girth in inches',
+     ylab='Height in ft')
+# Test for correlation between Girth and Height
+cor.test(trees$Girth, trees$Height)
+# Create boxplot for relation between Girth and Volume
+plot(trees$Girth, trees$Volume,
+     main='Girth and Volume of Black Cherry Trees',
+     xlab='Girth in inches',
+     ylab='Volume in cubic ft')
+# Test for correlation between Girth and Volume
+cor.test(trees$Girth, trees$Volume)
+# Create boxplot for relation between Height and Volume
+plot(trees$Height, trees$Volume,
+     main='Height and Volume of Black Cherry Trees',
+     xlab='Height in ft',
+     ylab='Volume in cubic ft')
+# Test for correlation between Height and Volume
+cor.test(trees$Height, trees$Volume)
